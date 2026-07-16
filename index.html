@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==========================
+     LOADER
+========================== -->
+<div id="loader">
+    <div class="spinner"></div>
+    <h2 id="loader-title">🌍 Planet Explorer</h2>
+</div>
+
+<!-- ==========================
+     SHOOTING STARS
+========================== -->
+<div class="shooting-star star1"></div>
+<div class="shooting-star star2"></div>
+<div class="shooting-star star3"></div>
+
+<!-- ==========================
+     NAVIGATION
+========================== -->
+<nav>
+    <div class="logo">
+        🌍 Planet Explorer
+    </div>
+    <ul>
+        <li><a href="#home" id="nav-home">Home</a></li>
+        <li><a href="#solar" id="nav-solar">Solar System</a></li>
+        <li><a href="#orbit" id="nav-orbit">3D Solar</a></li>
+        <li><a href="#features" id="nav-features">Features</a></li>
+        <li><a href="#gallery" id="nav-gallery">Gallery</a></li>
+        <li><a href="#quiz" id="nav-quiz">Quiz</a></li>
+        <li><a href="#nasa" id="nav-nasa">NASA</a></li>
+    </ul>
+    <div class="nav-right">
+        <input type="text" id="search" placeholder="Search Planet...">
+        <button class="theme">🌙</button>
+        <button id="language" class="language">አማርኛ</button>
+    </div>
+</nav>
+
+<!-- ==========================
+     HERO
+========================== -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1 id="hero-heading">Explore Our <span>Amazing Solar System</span></h1>
+        <p id="hero-desc">
+            Discover the Sun and the eight planets. Learn amazing facts and enjoy exploring space.
+        </p>
+        <button class="start">🚀 Start Exploring</button>
+    </div>
+    <div class="hero-image">
+        <div class="planet-glow"></div>
+        <img src="images/telescope.webp" class="planet" alt="Telescope">
+    </div>
+</section>
+
+<!-- ==========================
+     3D SOLAR SYSTEM
+========================== -->
+<section class="orbit-section" id="orbit">
+    <h2 id="orbit-heading">Animated Solar System</h2>
+    <div class="orbit-system">
+        <div class="sun">
+            <img src="images/sun.png" alt="Sun">
+        </div>
+        <div class="orbit mercury-orbit">
+            <img src="images/mercury.png" class="planet-orbit" alt="Mercury">
+        </div>
+        <div class="orbit venus-orbit">
+            <img src="images/venus.webp" class="planet-orbit" alt="Venus">
+        </div>
+        <div class="orbit earth-orbit">
+            <img src="images/earth.webp" class="planet-orbit" alt="Earth">
+        </div>
+        <div class="orbit mars-orbit">
+            <img src="images/mars.webp" class="planet-orbit" alt="Mars">
+        </div>
+        <div class="orbit jupiter-orbit">
+            <img src="images/jupiter.webp" class="planet-orbit" alt="Jupiter">
+        </div>
+        <div class="orbit saturn-orbit">
+            <img src="images/saturn.webp" class="planet-orbit" alt="Saturn">
+        </div>
+        <div class="orbit uranus-orbit">
+            <img src="images/uranus.webp" class="planet-orbit" alt="Uranus">
+        </div>
+        <div class="orbit neptune-orbit">
+            <img src="images/neptune.webp" class="planet-orbit" alt="Neptune">
+        </div>
+    </div>
+</section>
+
+<!-- ==========================
+     SOLAR SYSTEM
+========================== -->
+<section class="solar-system" id="solar">
+    <h2 id="solar-heading">Our Solar System</h2>
+    <p id="solar-desc">Explore the Sun and the eight amazing planets.</p>
+
+    <div class="filter-buttons">
+        <button onclick="filterPlanets('all')" id="btn-all" class="active">🌌 All</button>
+        <button onclick="filterPlanets('inner')" id="btn-inner">🪨 Inner Planets</button>
+        <button onclick="filterPlanets('outer')" id="btn-outer">🪐 Outer Planets</button>
+    </div>
+
+    <div class="solar-container">
+        <div class="planet-card" onclick="openPopup('Sun')">
+            <img src="images/sun.png" alt="Sun">
+            <p id="card-sun">Sun (Star)</p>
+        </div>
+        <div class="planet-card inner" onclick="openPopup('Mercury')">
+            <img src="images/mercury.png" alt="Mercury">
+            <p id="card-mercury">Mercury</p>
+        </div>
+        <div class="planet-card inner" onclick="openPopup('Venus')">
+            <img src="images/venus.webp" alt="Venus">
+            <p id="card-venus">Venus</p>
+        </div>
+        <div class="planet-card inner" onclick="openPopup('Earth')">
+            <img src="images/earth.webp" alt="Earth">
+            <p id="card-earth">Earth</p>
+        </div>
+        <div class="planet-card inner" onclick="openPopup('Mars')">
+            <img src="images/mars.webp" alt="Mars">
+            <p id="card-mars">Mars</p>
+        </div>
+        <div class="planet-card outer" onclick="openPopup('Jupiter')">
+            <img src="images/jupiter.webp" alt="Jupiter">
+            <p id="card-jupiter">Jupiter</p>
+        </div>
+        <div class="planet-card outer" onclick="openPopup('Saturn')">
+            <img src="images/saturn.webp" alt="Saturn">
+            <p id="card-saturn">Saturn</p>
+        </div>
+        <div class="planet-card outer" onclick="openPopup('Uranus')">
+            <img src="images/uranus.webp" alt="Uranus">
+            <p id="card-uranus">Uranus</p>
+        </div>
+        <div class="planet-card outer" onclick="openPopup('Neptune')">
+            <img src="images/neptune.webp" alt="Neptune">
+            <p id="card-neptune">Neptune</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================
+     FEATURES
+========================== -->
+<section class="features" id="features">
+    <div class="feature">
+        <h2 id="feat-learn-head">🌍 Learn</h2>
+        <p id="feat-learn-desc">Learn about every planet in our Solar System.</p>
+    </div>
+    <div class="feature">
+        <h2 id="feat-facts-head">📚 Facts</h2>
+        <p id="feat-facts-desc">Discover amazing facts about planets, stars, and space.</p>
+    </div>
+    <div class="feature">
+        <h2 id="feat-quiz-head">❓ Quiz</h2>
+        <p id="feat-quiz-desc">Test your knowledge with fun space questions.</p>
+    </div>
+    <div class="feature">
+        <h2 id="feat-explore-head">🚀 Explore</h2>
+        <p id="feat-explore-desc">Enjoy beautiful images and explore the universe.</p>
+    </div>
+</section>
+
+<!-- ==========================
+     GALLERY
+========================== -->
+<section class="gallery" id="gallery">
+    <h2 id="gallery-heading">Planet Gallery</h2>
+    <p id="gallery-desc">Click on any planet to learn more.</p>
+    <div class="gallery-grid">
+        <div class="gallery-card" onclick="openPopup('Mercury')">
+            <img src="images/mercury.png" alt="Mercury">
+            <h3 id="gal-mercury">Mercury</h3>
+        </div>
+        <div class="gallery-card" onclick="openPopup('Venus')">
+            <img src="images/venus.webp" alt="Venus">
+            <h3 id="gal-venus">Venus</h3>
+        </div>
+        <div class="gallery-card" onclick="openPopup('Earth')">
+            <img src="images/earth.webp" alt="Earth">
+            <h3 id="gal-earth">Earth</h3>
+        </div>
+        <div class="gallery-card" onclick="openPopup('Mars')">
+            <img src="images/mars.webp" alt="Mars">
+            <h3 id="gal-mars">Mars</h3>
+        </div>
+        <div class="gallery-card" onclick="openPopup('Jupiter')">
+            <img src="images/jupiter.webp" alt="Jupiter">
+            <h3 id="gal-jupiter">Jupiter</h3>
+        </div>
+        <div class="gallery-card" onclick="openPopup('Saturn')">
+            <img src="images/saturn.webp" alt="Saturn">
+            <h3 id="gal-saturn">Saturn</h3>
+        </div>
+        <div class="gallery-card" onclick="openPopup('Uranus')">
+            <img src="images/uranus.webp" alt="Uranus">
+            <h3 id="gal-uranus">Uranus</h3>
+        </div>
+        <div class="gallery-card" onclick="openPopup('Neptune')">
+            <img src="images/neptune.webp" alt="Neptune">
+            <h3 id="gal-neptune">Neptune</h3>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================
+     QUIZ
+========================== -->
+<section class="quiz" id="quiz">
+    <h2 id="quiz-heading">🚀 Space Quiz</h2>
+    <p id="quiz-desc">Test your Solar System knowledge!</p>
+    <div class="quiz-box">
+        <h3 id="quiz-question">Loading question...</h3>
+        <div id="quiz-options"></div>
+        <h2 id="result"></h2>
+        <button id="next-btn" style="display: none; background: #38dfff; color: #08142f; font-weight: bold; margin-top: 20px;">Next Question ➡️</button>
+    </div>
+</section>
+
+<!-- ==========================
+     NASA APOD
+========================== -->
+<section class="nasa-section" id="nasa">
+    <h2 id="nasa-heading">🚀 NASA Astronomy Picture of the Day</h2>
+    <img id="nasa-img" src="images/space.webp" alt="NASA Image">
+    <h3 id="nasa-title">Loading...</h3>
+    <p id="nasa-description">NASA image will appear here.</p>
+</section>
+
+<!-- ==========================
+     ROCKET (BACK TO TOP)
+========================== -->
+<img src="images/rocket.webp" id="rocket" alt="Rocket">
+
+<!-- ==========================
+     PLANET POPUP
+========================== -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img id="popup-img" src="" alt="Planet">
+        <h2 id="popup-title"></h2>
+        <p id="popup-text"></p>
+    </div>
+</div>
+
+<!-- ==========================
+     FOOTER
+========================== -->
+<footer>
+    <h3 id="footer-logo">🌍 Planet Explorer</h3>
+    <p id="footer-desc">Discover the beauty of our Solar System.</p>
+    <p>© 2026 Planet Explorer | Made by Ananya</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
