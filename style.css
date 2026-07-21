@@ -909,3 +909,96 @@ section{
 .close:hover {
     color: #ff4a4a;
 }
+/* Mobile Responsive Styling for Planet Popup */
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Modal Content Box */
+#popup .popup-content, 
+.modal-content {
+    background: #0f172a;
+    color: #ffffff;
+    border: 1px solid #00ffcc;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh; /* ከስክሪኑ ቁመት 80% ብቻ እንዲይዝ ያደርጋል */
+    overflow-y: auto;  /* ጽሁፉ ረጅም ሲሆን በጣት ወደ ታች Scroll እንዲያደርግ ያደርጋል */
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.3);
+    text-align: center;
+    position: relative;
+    animation: popupAnimation 0.3s ease-in-out;
+}
+
+/* Popup Image Styling */
+#popup img, 
+#popup-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin: 10px auto;
+    display: block;
+}
+
+/* Popup Text Styling */
+#popup h2, 
+#popup-title {
+    color: #00ffcc;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#popup p, 
+#popup-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    text-align: left;
+    white-space: pre-line; /* የአንቀጽ ክፍተቶችን ጠብቆ እንዲያሳይ */
+}
+
+/* Close Button Style */
+.close-btn, 
+#popup .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #ff4a4a;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Scrollbar Design for Mobile */
+#popup .popup-content::-webkit-scrollbar {
+    width: 6px;
+}
+#popup .popup-content::-webkit-scrollbar-thumb {
+    background: #00ffcc;
+    border-radius: 10px;
+}
+
+@keyframes popupAnimation {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
